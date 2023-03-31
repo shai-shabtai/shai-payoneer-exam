@@ -3,7 +3,7 @@ pipeline {
 
     parameters {
         string(name: 'BRANCH_NAME', description: 'Enter the name of the branch to build', defaultValue: 'main')
-        string(name: 'GITHUB_URL', description: 'Enter the GITHUB URL', defaultValue: 'https://github.com/shai-shabtai/test-exam.git')
+        string(name: 'GITHUB_URL', description: 'Enter the GITHUB URL', defaultValue: 'https://github.com/shai-shabtai/shai-payoneer-exam.git')
     }
     triggers {
         githubPush()
