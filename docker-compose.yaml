@@ -1,0 +1,12 @@
+version: "3.8"
+
+services:
+  py-app:
+    container_name: count-service
+    image: shaishabtai/count-service:latest 
+    ports:
+    - "80:5000"
+    networks:
+      - count-service
+networks:
+  count-service:
