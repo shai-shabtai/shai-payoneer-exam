@@ -10,9 +10,15 @@ pipeline {
     }
 
     stages {
-        stage('Build') {
+        stage('GitHub Checkout') {
             steps {
                     checkout([$class: 'GitSCM', branches: [[name: "${params.BRANCH_NAME}"]], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: "${params.GITHUB_URL}"]]])
+
+            }
+        }
+
+        stage('Build') {
+            steps {
     	            dir('python/') {
                 	      sh "docker build -f Dockerfile -t count-service:${params.BRANCH_NAME} ."
 		            }

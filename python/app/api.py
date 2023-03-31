@@ -8,7 +8,7 @@ app = FastAPI()
 @app.get("/")
 @app.get("/get")
 def get_data():
-    return {"The counter value is": counter}
+    return {"The counter value": counter}
 
 ## POST RUL that increas the counter by 1 on every call
 @app.post("/post")
